@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #272c34;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="craft.tierup.UiController">
+   <children>
+      <Pane fx:id="paneHeader" prefHeight="40.0" prefWidth="600.0" style="-fx-background-color: #202225;" stylesheets="@../../main.css">
+         <children>
+            <ImageView fitHeight="35.0" fitWidth="118.0" layoutX="5.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="573.0" layoutY="6.0" onMouseClicked="#uiCraft" pickOnBounds="true" preserveRatio="true" rotate="-70.3">
+               <image>
+                  <Image url="@../../craft.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+      <TextField id="donateAddress" alignment="CENTER" editable="false" focusTraversable="false" layoutX="50.0" layoutY="255.0" prefHeight="25.0" prefWidth="500.0" style="-fx-background-color: #323844; -fx-background-radius: 10;" stylesheets="@../../main.css" text="09457020076">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <Label alignment="CENTER" layoutX="24.0" layoutY="113.0" prefHeight="20.0" prefWidth="550.0" text="Wemix" textFill="#25de7d">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="264.0" layoutY="68.0" prefHeight="27.0" prefWidth="103.0" text="Donate" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <TextField id="donateAddress" alignment="CENTER" editable="false" focusTraversable="false" layoutX="50.0" layoutY="133.0" prefHeight="25.0" prefWidth="500.0" style="-fx-background-color: #323844; -fx-background-radius: 10;" stylesheets="@../../main.css" text="0x36a3d7d0238ba29229295e49dd41ab574a8b3d61">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <Label alignment="CENTER" layoutX="24.0" layoutY="174.0" prefHeight="20.0" prefWidth="550.0" text="Klay / BNB" textFill="#ebc839">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField id="donateAddress" alignment="CENTER" editable="false" focusTraversable="false" layoutX="50.0" layoutY="194.0" prefHeight="25.0" prefWidth="500.0" style="-fx-background-color: #323844; -fx-background-radius: 10;" stylesheets="@../../main.css" text="0x66f83088ca53485a1de99e1f139774a23d92cdb0">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <Label alignment="CENTER" layoutX="24.0" layoutY="235.0" prefHeight="20.0" prefWidth="550.0" text="GCash" textFill="#0077f1">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="44.0" fitWidth="48.0" layoutX="224.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../give.png" />
+         </image>
+      </ImageView>
+      <Pane fx:id="creditsPane" layoutX="50.0" layoutY="373.0" prefHeight="107.0" prefWidth="314.0" style="-fx-background-color: #323844; -fx-background-radius: 10;">
+         <children>
+            <Label layoutY="4.0" prefHeight="20.0" prefWidth="340.0" text="Credits" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets left="8.0" />
+               </padding>
+            </Label>
+            <Hyperlink fx:id="hLinkOne" alignment="TOP_LEFT" cacheShape="false" centerShape="false" contentDisplay="CENTER" focusTraversable="false" layoutY="45.0" onMouseClicked="#hyperLinkOne" prefHeight="23.0" prefWidth="310.0" scaleShape="false" style="-fx-border-width: 0;" text="https://icons8.com/icon/1AFRKhbttYBx/sword" textFill="#40bfff">
+               <padding>
+                  <Insets left="8.0" />
+               </padding>
+               <font>
+                  <Font size="11.0" />
+               </font></Hyperlink>
+            <Hyperlink fx:id="hLinkThree" alignment="TOP_LEFT" cacheShape="false" centerShape="false" contentDisplay="CENTER" focusTraversable="false" layoutY="83.0" onMouseClicked="#hyperLinkThree" prefHeight="23.0" prefWidth="310.0" scaleShape="false" style="-fx-border-width: 0;" text="https://icons8.com/icon/hve05CyaEd2a/hand-holding-heart" textFill="#40bfff">
+               <padding>
+                  <Insets left="8.0" />
+               </padding>
+               <font>
+                  <Font size="11.0" />
+               </font></Hyperlink>
+            <Hyperlink fx:id="hLinkTwo" alignment="TOP_LEFT" cacheShape="false" centerShape="false" contentDisplay="CENTER" focusTraversable="false" layoutY="64.0" onMouseClicked="#hyperLinkTwo" prefHeight="21.0" prefWidth="310.0" scaleShape="false" style="-fx-border-width: 0;" text="https://icons8.com/icon/3XxgEdROIniT/carving" textFill="#40bfff">
+               <padding>
+                  <Insets left="8.0" />
+               </padding>
+               <font>
+                  <Font size="11.0" />
+               </font></Hyperlink>
+            <Hyperlink fx:id="hLinkFour" alignment="TOP_LEFT" cacheShape="false" centerShape="false" contentDisplay="CENTER" focusTraversable="false" layoutY="26.0" onMouseClicked="#hyperLinkFour" prefHeight="23.0" prefWidth="310.0" scaleShape="false" style="-fx-border-width: 0;" text="https://icons8.com/icon/12780/calculator" textFill="#40bfff">
+               <padding>
+                  <Insets left="8.0" />
+               </padding>
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </Pane>
+      <Group layoutX="183.0" layoutY="480.0">
+         <children>
+            <ImageView fitHeight="92.0" fitWidth="110.0" layoutX="-4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../box-cute.gif" />
+               </image>
+               <effect>
+                  <Reflection fraction="0.17" topOpacity="0.22" />
+               </effect>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="112.0" layoutY="30.0" prefHeight="57.0" prefWidth="157.0" text="&quot;Happy crafting!&quot;" textAlignment="CENTER" textFill="#e8d6a1" wrapText="true">
+               <font>
+                  <Font name="Consolas Italic" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="8.0" />
+               </padding>
+            </Label>
+         </children>
+      </Group>
+      <Pane fx:id="footerPane" layoutY="585.0" prefHeight="15.0" prefWidth="600.0" style="-fx-background-color: #202225;">
+         <children>
+            <Label contentDisplay="TOP" prefHeight="15.0" prefWidth="86.0" text="Created by: Eonєr" textFill="#cdcdcd">
+               <font>
+                  <Font name="Calibri Bold" size="11.0" />
+               </font>
+               <padding>
+                  <Insets left="4.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="creditsPane1" layoutX="372.0" layoutY="373.0" prefHeight="107.0" prefWidth="178.0" style="-fx-background-color: #323844; -fx-background-radius: 10;">
+         <children>
+            <Label layoutY="4.0" prefHeight="20.0" prefWidth="112.0" text="How to use" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets left="8.0" />
+               </padding>
+            </Label>
+            <Label layoutY="53.0" prefHeight="20.0" prefWidth="112.0" text="Contact me" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets left="8.0" />
+               </padding>
+            </Label>
+            <Hyperlink fx:id="tutorialLink" cacheShape="false" centerShape="false" contentDisplay="CENTER" focusTraversable="false" layoutX="4.0" layoutY="19.0" onAction="#tutorialLink" onMouseClicked="#hyperLinkFour" prefHeight="23.0" prefWidth="128.0" scaleShape="false" style="-fx-border-width: 0;" text="Click here to watch" textFill="#40bfff" underline="true">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Hyperlink>
+            <TextField id="donateAddress" editable="false" focusTraversable="false" layoutX="5.0" layoutY="76.0" prefHeight="22.0" prefWidth="168.0" style="-fx-background-color: #3f4656; -fx-background-radius: 4;" stylesheets="@../../main.css" text="gaming.eoner@gmail.com">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+         </children>
+      </Pane>
+      <TextField id="donateAddress" alignment="CENTER" editable="false" focusTraversable="false" layoutX="50.0" layoutY="316.0" prefHeight="25.0" prefWidth="500.0" style="-fx-background-color: #323844; -fx-background-radius: 10;" stylesheets="@../../main.css" text="gaming.eoner@gmail.com">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <Label alignment="CENTER" layoutX="24.0" layoutY="296.0" prefHeight="20.0" prefWidth="550.0" text="PayPal" textFill="#258bbc">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

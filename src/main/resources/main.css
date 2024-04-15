@@ -1,0 +1,8 @@
+#donateAddress{
+    -fx-text-fill: #e0e0e0;
+}
+#paneHeader{
+-fx-background-image: url('pattern.png');
+-fx-background-size: 300;
+-fx-background-repeat: no-repeat;
+}

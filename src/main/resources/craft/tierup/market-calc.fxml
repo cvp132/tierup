@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="226.0" prefWidth="399.0" style="-fx-background-color: #323844;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="craft.tierup.MarketCalculatorController">
+   <children>
+      <Label layoutX="12.0" layoutY="76.0" prefHeight="31.0" prefWidth="72.0" text="Total Unit" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Label>
+      <TextField fx:id="mc_ucMaterial" layoutX="85.0" layoutY="79.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+      <TextField fx:id="mc_ucUnitPrice" layoutX="85.0" layoutY="109.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+      <TextField fx:id="mc_ucTotal" layoutX="85.0" layoutY="139.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+      <TextField fx:id="mc_rareMaterial" layoutX="162.0" layoutY="79.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+      <TextField fx:id="mc_rareUnitPrice" layoutX="162.0" layoutY="109.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+      <TextField fx:id="mc_rareTotal" layoutX="162.0" layoutY="139.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+      <TextField fx:id="mc_epicMaterial" layoutX="239.0" layoutY="79.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+      <TextField fx:id="mc_epicUnitPrice" layoutX="239.0" layoutY="109.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+      <TextField fx:id="mc_epicTotal" layoutX="239.0" layoutY="139.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+      <TextField fx:id="mc_legendMaterial" layoutX="316.0" layoutY="79.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+      <TextField fx:id="mc_legendUnitPrice" layoutX="316.0" layoutY="109.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+      <TextField fx:id="mc_legendTotal" layoutX="316.0" layoutY="139.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+      <Label layoutX="12.0" layoutY="115.0" text="Price Per Unit" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Label>
+      <Label layoutX="12.0" layoutY="144.0" text="Total Price" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Label>
+      <Button fx:id="mc_calculateBtn" layoutX="85.0" layoutY="173.0" mnemonicParsing="false" onAction="#calculate" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #8228bd; -fx-background-radius: 2;" text="Calculate" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Button>
+      <Group layoutX="317.0" layoutY="188.0" />
+      <Label layoutX="221.0" layoutY="174.0" text="OVERALL TOTAL" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="errorMsg" alignment="CENTER" contentDisplay="CENTER" layoutX="85.0" layoutY="30.0" prefHeight="20.0" prefWidth="303.0" textFill="#ff4343">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="mc_resetBtn" layoutX="162.0" layoutY="173.0" mnemonicParsing="false" onAction="#reset" prefHeight="25.0" prefWidth="44.0" style="-fx-background-color: #525b70; -fx-background-radius: 2;" text="Reset" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="31.0" fitWidth="29.0" layoutX="5.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../calc.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="38.0" layoutY="15.0" text="Market Calculator" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField alignment="CENTER" layoutX="85.0" layoutY="52.0" prefHeight="25.0" prefWidth="72.0" promptText="Item 1" style="-fx-background-color: #323844; -fx-text-fill: white;">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </TextField>
+      <TextField alignment="CENTER" layoutX="162.0" layoutY="52.0" prefHeight="25.0" prefWidth="72.0" promptText="Item 2" style="-fx-background-color: #323844; -fx-text-fill: white;">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </TextField>
+      <TextField alignment="CENTER" layoutX="239.0" layoutY="52.0" prefHeight="25.0" prefWidth="72.0" promptText="Item 3" style="-fx-background-color: #323844; -fx-text-fill: white;">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </TextField>
+      <TextField alignment="CENTER" layoutX="316.0" layoutY="52.0" prefHeight="25.0" prefWidth="72.0" promptText="Item 4" style="-fx-background-color: #323844; -fx-text-fill: white;">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </TextField>
+      <Label fx:id="mc_overallTotal" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="298.0" layoutY="173.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="32.0" prefWidth="90.0" text="0 Gold" textFill="#ffcb00" underline="true" wrapText="true">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="modeOne" layoutX="308.0" layoutY="8.0" mnemonicParsing="false" onAction="#mode" selected="true" style="-fx-text-fill: white;" text="TP" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="11.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="mode" />
+         </toggleGroup>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </RadioButton>
+      <RadioButton fx:id="modeTwo" layoutX="346.0" layoutY="8.0" mnemonicParsing="false" onAction="#mode" style="-fx-text-fill: white;" text="PPU" textFill="WHITE" toggleGroup="$mode">
+         <font>
+            <Font name="Calibri Bold" size="11.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </RadioButton>
+      <Label layoutX="259.0" layoutY="9.0" prefHeight="14.0" prefWidth="39.0" text="MODE:" textFill="#aeaeae">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </Label>
+      <Group layoutX="85.0" layoutY="108.0">
+         <children>
+            <Label fx:id="mc_ucUnitPriceResult" alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="72.0" style="-fx-border-width: 1; -fx-border-color: #535c71; -fx-border-radius: 2;" text="0.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="mc_rareUnitPriceResult" alignment="CENTER" contentDisplay="CENTER" layoutX="77.0" prefHeight="26.0" prefWidth="72.0" style="-fx-border-width: 1; -fx-border-color: #535c71; -fx-border-radius: 2;" text="0.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="mc_epicUnitPriceResult" alignment="CENTER" contentDisplay="CENTER" layoutX="154.0" prefHeight="26.0" prefWidth="72.0" style="-fx-border-width: 1; -fx-border-color: #535c71; -fx-border-radius: 2;" text="0.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="mc_legendUnitPriceResult" alignment="CENTER" contentDisplay="CENTER" layoutX="231.0" prefHeight="26.0" prefWidth="72.0" style="-fx-border-width: 1; -fx-border-color: #535c71; -fx-border-radius: 2;" text="0.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <Group layoutX="85.0" layoutY="138.0">
+         <children>
+            <Label fx:id="mc_ucTotalResult" alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="72.0" style="-fx-border-width: 1; -fx-border-color: #535c71; -fx-border-radius: 2;" text="0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="mc_rareTotalResult" alignment="CENTER" contentDisplay="CENTER" layoutX="77.0" prefHeight="26.0" prefWidth="72.0" style="-fx-border-width: 1; -fx-border-color: #535c71; -fx-border-radius: 2;" text="0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="mc_epicTotalResult" alignment="CENTER" contentDisplay="CENTER" layoutX="154.0" prefHeight="26.0" prefWidth="72.0" style="-fx-border-width: 1; -fx-border-color: #535c71; -fx-border-radius: 2;" text="0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="mc_legendTotalResult" alignment="CENTER" contentDisplay="CENTER" layoutX="231.0" prefHeight="26.0" prefWidth="72.0" style="-fx-border-width: 1; -fx-border-color: #535c71; -fx-border-radius: 2;" text="0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+   </children>
+</Pane>

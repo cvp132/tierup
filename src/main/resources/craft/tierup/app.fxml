@@ -1,0 +1,1059 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="craft.tierup.AppController">
+   <children>
+      <Pane fx:id="paneHeader" prefHeight="40.0" prefWidth="600.0" style="-fx-background-color: #202225;" stylesheets="@../../main.css">
+         <children>
+            <Button fx:id="mc_btn" layoutX="473.0" layoutY="9.0" mnemonicParsing="false" onAction="#uiMarketCalculator" style="-fx-background-color: #272c34; -fx-text-fill: #efefef; -fx-border-radius: 4;" text="Market Calculator">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="35.0" fitWidth="118.0" layoutX="5.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="580.0" layoutY="9.0" onMouseClicked="#uiAppreciate" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../give.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="paneMain" layoutY="40.0" prefHeight="560.0" prefWidth="600.0" style="-fx-background-color: #b9bbbe;">
+         <children>
+            <Pane fx:id="paneCalculate" onKeyPressed="#calculate" prefHeight="560.0" prefWidth="300.0" style="-fx-background-color: #323844;">
+               <children>
+                  <Group layoutX="8.0" layoutY="10.0">
+                     <children>
+                        <Label fx:id="lab_equipment" text="Equipment" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="in_equipment" layoutY="15.0" prefWidth="284.0" promptText="Select" style="-fx-background-color: white; -fx-background-radius: 2;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ComboBox>
+                        <Label fx:id="lab_rarity" layoutY="47.0" text="Rarity" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="in_rarity" layoutY="62.0" prefHeight="25.0" prefWidth="138.0" promptText="Select" style="-fx-background-color: white; -fx-background-radius: 2;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ComboBox>
+                        <ComboBox fx:id="in_tier" layoutY="110.0" prefHeight="25.0" prefWidth="138.0" promptText="Select" style="-fx-background-color: white; -fx-background-radius: 2;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ComboBox>
+                        <Label fx:id="lab_cost" layoutX="150.0" layoutY="61.0" prefHeight="14.0" prefWidth="127.0" text="Equipment Craft Cost" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <CheckBox fx:id="in_tierOne" disable="true" layoutX="150.0" layoutY="86.0" mnemonicParsing="false" text="Tier 1" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="in_tierTwo" disable="true" layoutX="150.0" layoutY="118.0" mnemonicParsing="false" text="Tier 2" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="in_tierThree" disable="true" layoutX="227.0" layoutY="86.0" mnemonicParsing="false" text="Tier 3" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <CheckBox fx:id="in_tierFour" disable="true" layoutX="227.0" layoutY="118.0" mnemonicParsing="false" text="Tier 4" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                        <Label fx:id="lab_tier" layoutY="95.0" text="Tier" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Label alignment="CENTER" layoutX="8.0" layoutY="190.0" prefHeight="17.0" prefWidth="284.0" text="OWNED MATERIALS" textFill="WHITE" underline="true">
+                     <font>
+                        <Font name="Calibri Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Group fx:id="labelsRarity" layoutX="1.0" layoutY="214.0">
+                     <children>
+                        <Label fx:id="lab_epic1" alignment="CENTER" contentDisplay="CENTER" layoutX="139.0" prefHeight="20.0" prefWidth="34.0" text="Epic" textFill="#d73d3d">
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lab_legendary1" alignment="CENTER" contentDisplay="CENTER" layoutX="213.0" prefHeight="20.0" prefWidth="68.0" text="Legendary" textFill="#ffcb00">
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="60.0" prefHeight="20.0" prefWidth="34.0" text="Rare" textFill="#3c8fd3">
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Group layoutX="66.0" layoutY="236.0">
+                     <children>
+                        <TextField fx:id="in_rareMatOne" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+                        <TextField fx:id="in_rareMatTwo" layoutY="30.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+                        <TextField fx:id="in_rareMatThree" layoutY="60.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+                        <TextField fx:id="in_rareMatFour" layoutY="90.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+                     </children>
+                  </Group>
+                  <Group layoutX="143.0" layoutY="236.0">
+                     <children>
+                        <TextField fx:id="in_epicMatOne" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+                        <TextField fx:id="in_epicMatTwo" layoutY="30.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+                        <TextField fx:id="in_epicMatThree" layoutY="60.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+                        <TextField fx:id="in_epicMatFour" layoutY="90.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+                     </children>
+                  </Group>
+                  <Group layoutX="220.0" layoutY="236.0">
+                     <children>
+                        <TextField fx:id="in_legendMatOne" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+                        <TextField fx:id="in_legendMatTwo" layoutY="30.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+                        <TextField fx:id="in_legendMatThree" layoutY="60.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+                        <TextField fx:id="in_legendMatFour" layoutY="90.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+                     </children>
+                  </Group>
+                  <TextField fx:id="in_matFive" layoutX="66.0" layoutY="356.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white; -fx-background-radius: 2;" />
+                  <Group fx:id="labelsMaterial" layoutX="8.0" layoutY="242.0">
+                     <children>
+                        <Label text="Material 1" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutY="30.0" text="Material 2" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutY="60.0" text="Material 3" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lab_materialFive1" layoutY="119.0" text="Material 5" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lab_materialFour1" layoutY="90.0" text="Material 4" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Group layoutX="8.0" layoutY="416.0">
+                     <children>
+                        <TextField fx:id="in_copper" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: #ffffff; -fx-background-radius: 2;" />
+                        <TextField fx:id="in_darkSteel" layoutX="145.0" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: #ffffff; -fx-background-radius: 2;" />
+                        <TextField fx:id="in_oldSilver" layoutY="51.0" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #ffffff; -fx-background-radius: 2;" />
+                        <TextField fx:id="in_glittering" layoutX="72.0" layoutY="51.0" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #ffffff; -fx-background-radius: 2;" />
+                        <TextField fx:id="in_elixir" layoutX="145.0" layoutY="51.0" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #ffffff; -fx-background-radius: 2;" />
+                        <TextField fx:id="in_dragonSteel" layoutX="217.0" layoutY="51.0" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #ffffff; -fx-background-radius: 2;" />
+                     </children>
+                  </Group>
+                  <Group layoutX="8.0" layoutY="400.0">
+                     <children>
+                        <Label text="Copper">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5276243093922651" focusDistance="-0.3448275862068966" radius="0.603448275862069">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006711409395973154">
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.7300000190734863" green="0.43763500452041626" blue="0.08030000329017639" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <Label layoutY="51.0" text="Old Silver">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5276243093922651" focusDistance="-0.3448275862068966" radius="0.603448275862069">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006711409395973154">
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.6899999976158142" green="0.22631999850273132" blue="0.02759999968111515" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <Label layoutX="143.0" text="Darksteel">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5276243093922651" focusDistance="-0.3448275862068966" radius="0.603448275862069">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006711409395973154">
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.6467199921607971" green="0.32679998874664307" blue="0.8600000143051147" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <Label layoutX="71.0" layoutY="51.0" text="Glittering">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5276243093922651" focusDistance="-0.3448275862068966" radius="0.603448275862069">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006711409395973154">
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.5899400115013123" green="0.7799999713897705" blue="0.444599986076355" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <Label fx:id="lab_elixir1" layoutX="147.0" layoutY="51.0" text="Life Elixir">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5883977900552485" centerY="0.2085308056872038" focusDistance="-0.3448275862068966" radius="0.603448275862069">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006711409395973154">
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.8588235378265381" green="0.03529411926865578" blue="0.7960784435272217" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <Label fx:id="lab_dragonSteel1" layoutX="215.0" layoutY="51.0" text="Dragonsteel">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.46132596685082866" centerY="0.13744075829383887" focusDistance="-0.3448275862068966" radius="0.603448275862069">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.46308724832214765">
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.7894737124443054" green="0.7894737124443054" blue="0.7894737124443054" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Button fx:id="calculateButton" layoutX="115.0" layoutY="503.0" mnemonicParsing="false" onAction="#calculate" prefHeight="30.0" prefWidth="178.0" style="-fx-background-color: #339966; -fx-background-radius: 2;" text="Calculate" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="resetButton" layoutX="8.0" layoutY="503.0" mnemonicParsing="false" onAction="#reset" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #525b70; -fx-background-radius: 2;" text="Reset" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="errorMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="162.0" prefHeight="17.0" prefWidth="284.0" textFill="#ff4343">
+                     <font>
+                        <Font name="Calibri Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lab_tierOneMultiplier" layoutX="195.0" layoutY="86.0" textFill="#ff9600">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lab_tierTwoMultiplier" layoutX="195.0" layoutY="118.0" textFill="#ff9600">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lab_tierThreeMultiplier" layoutX="272.0" layoutY="86.0" textFill="#ff9600">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="paneResult" layoutX="300.0" prefHeight="560.0" prefWidth="300.0" style="-fx-background-color: #272c34;">
+               <children>
+                  <Label alignment="CENTER" layoutX="8.0" layoutY="190.0" prefHeight="17.0" prefWidth="284.0" text="REMAINING MATERIALS NEEDED" textFill="WHITE" underline="true">
+                     <font>
+                        <Font name="Calibri Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Group layoutX="5.0" layoutY="45.0">
+                     <children>
+                        <Label layoutX="5.0" layoutY="17.0" prefHeight="30.0" prefWidth="73.0" style="-fx-background-color: #202225; -fx-background-radius: 2; -fx-border-color: #323844; -fx-border-radius: 2;" text="          /" textFill="#d7d7d7">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="9.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../platinum.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <effect>
+                              <Bloom>
+                                 <input>
+                                    <DropShadow />
+                                 </input>
+                              </Bloom>
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="46.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../steel.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <effect>
+                              <Bloom>
+                                 <input>
+                                    <DropShadow />
+                                 </input>
+                              </Bloom>
+                           </effect>
+                        </ImageView>
+                        <Label layoutX="14.0" text="Material 1: " textFill="#dddddd">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Group layoutX="90.0" layoutY="45.0">
+                     <children>
+                        <Label contentDisplay="CENTER" layoutX="2.0" layoutY="17.0" prefHeight="30.0" prefWidth="97.0" style="-fx-background-color: #202225; -fx-background-radius: 2; -fx-border-color: #323844; -fx-border-radius: 2;" text="         /         /  " textFill="#d7d7d7">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="70.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../moon-shadow-stone.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <effect>
+                              <DropShadow height="10.0" offsetX="2.0" offsetY="2.0" radius="4.5" spread="0.13" width="10.0">
+                                 <input>
+                                    <Bloom threshold="0.95" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="36.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../exorcism-bauble.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <effect>
+                              <DropShadow height="10.0" offsetX="2.0" offsetY="2.0" radius="4.5" spread="0.13" width="10.0">
+                                 <input>
+                                    <Bloom threshold="0.95" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="3.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../anima-stone.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <effect>
+                              <DropShadow height="10.0" offsetX="2.0" offsetY="2.0" radius="4.5" spread="0.13" width="10.0">
+                                 <input>
+                                    <Bloom threshold="0.95" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <Label layoutX="24.0" text="Material 2 :" textFill="#dddddd">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Group layoutX="198.0" layoutY="45.0">
+                     <children>
+                        <Label layoutX="-2.0" layoutY="17.0" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: #202225; -fx-background-radius: 2; -fx-border-color: #323844; -fx-border-radius: 2;" text="         /        /  " textFill="#d7d7d7">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="64.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../evil-minded-orb.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <effect>
+                              <DropShadow height="10.0" offsetX="2.0" offsetY="2.0" radius="4.5" spread="0.13" width="10.0">
+                                 <input>
+                                    <Bloom threshold="0.95" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="34.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../quintessence.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <effect>
+                              <DropShadow height="10.0" offsetX="2.0" offsetY="2.0" radius="4.5" spread="0.13" width="10.0">
+                                 <input>
+                                    <Bloom threshold="0.95" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="1.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../illuminating-fragment.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <effect>
+                              <DropShadow height="10.0" offsetX="2.0" offsetY="2.0" radius="4.5" spread="0.13" width="10.0">
+                                 <input>
+                                    <Bloom threshold="0.95" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <Label layoutX="19.0" text="Material 3 :" textFill="#dddddd">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Group layoutX="60.0" layoutY="101.0">
+                     <children>
+                        <Label layoutY="16.0" prefHeight="30.0" prefWidth="73.0" style="-fx-background-color: #202225; -fx-background-radius: 2; -fx-border-color: #323844; -fx-border-radius: 2;">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="18.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../ice-crystal.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <effect>
+                              <DropShadow height="10.0" offsetX="2.0" offsetY="2.0" radius="4.5" spread="0.13" width="10.0">
+                                 <input>
+                                    <Bloom threshold="0.95" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <Label layoutX="8.0" text="Material 4 :" textFill="#dddddd">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Group layoutX="142.0" layoutY="101.0">
+                     <children>
+                        <Label layoutY="16.0" prefHeight="30.0" prefWidth="97.0" style="-fx-background-color: #202225; -fx-background-radius: 2; -fx-border-color: #323844; -fx-border-radius: 2;" text="        /         /  " textFill="#d7d7d7">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="63.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../eternal-cold-jade.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <effect>
+                              <DropShadow height="10.0" offsetX="2.0" offsetY="2.0" radius="4.5" spread="0.13" width="10.0">
+                                 <input>
+                                    <Bloom threshold="0.95" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="30.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../eternal-colsteel.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <effect>
+                              <DropShadow height="10.0" offsetX="2.0" offsetY="2.0" radius="4.5" spread="0.13" width="10.0">
+                                 <input>
+                                    <Bloom threshold="0.95" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="2.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../eternal-steel.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <effect>
+                              <DropShadow height="10.0" offsetX="2.0" offsetY="2.0" radius="4.5" spread="0.13" width="10.0">
+                                 <input>
+                                    <Bloom threshold="0.95" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <Label layoutX="22.0" text="Material 5 :" textFill="#dddddd">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Label fx:id="out_rareMatOne" contentDisplay="CENTER" layoutX="67.0" layoutY="243.0" prefHeight="17.0" prefWidth="70.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="out_rareMatTwo" contentDisplay="CENTER" layoutX="67.0" layoutY="272.0" prefHeight="17.0" prefWidth="70.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="out_rareMatThree" contentDisplay="CENTER" layoutX="67.0" layoutY="301.0" prefHeight="17.0" prefWidth="70.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="out_epicMatOne" contentDisplay="CENTER" layoutX="145.0" layoutY="243.0" prefHeight="17.0" prefWidth="70.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="out_epicMatTwo" contentDisplay="CENTER" layoutX="145.0" layoutY="272.0" prefHeight="17.0" prefWidth="70.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="out_epicMatThree" contentDisplay="CENTER" layoutX="145.0" layoutY="301.0" prefHeight="17.0" prefWidth="70.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="out_legendMatOne" contentDisplay="CENTER" layoutX="223.0" layoutY="243.0" prefHeight="17.0" prefWidth="70.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="out_legendMatTwo" contentDisplay="CENTER" layoutX="223.0" layoutY="272.0" prefHeight="17.0" prefWidth="70.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="out_legendMatThree" contentDisplay="CENTER" layoutX="223.0" layoutY="301.0" prefHeight="17.0" prefWidth="70.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="out_rareMatFour" contentDisplay="CENTER" layoutX="67.0" layoutY="331.0" prefHeight="17.0" prefWidth="70.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="out_matFive" contentDisplay="CENTER" layoutX="67.0" layoutY="360.0" prefHeight="17.0" prefWidth="70.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="out_epicMatFour" contentDisplay="CENTER" layoutX="145.0" layoutY="331.0" prefHeight="17.0" prefWidth="70.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="out_legendMatFour" contentDisplay="CENTER" layoutX="223.0" layoutY="331.0" prefHeight="17.0" prefWidth="70.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </Label>
+                  <Group fx:id="labelsMaterial2" layoutX="8.0" layoutY="245.0">
+                     <children>
+                        <Label text="Material 1" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutY="30.0" text="Material 2" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutY="60.0" text="Material 3" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lab_materialFour2" layoutY="90.0" text="Material 4" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lab_materialFive2" layoutY="119.0" text="Material 5" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Group fx:id="labelsRarity1" layoutX="1.0" layoutY="222.0">
+                     <children>
+                        <Label fx:id="lab_rare2" alignment="CENTER" contentDisplay="CENTER" layoutX="60.0" prefHeight="20.0" prefWidth="34.0" text="Rare" textFill="#3c8fd3">
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lab_epic2" alignment="CENTER" contentDisplay="CENTER" layoutX="139.0" prefHeight="20.0" prefWidth="34.0" text="Epic" textFill="#d73d3d">
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lab_legendary2" alignment="CENTER" contentDisplay="CENTER" layoutX="213.0" prefHeight="20.0" prefWidth="68.0" text="Legendary" textFill="#ffcb00">
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Group layoutX="8.0" layoutY="407.0">
+                     <children>
+                        <Label fx:id="out_copper" layoutY="15.0" prefHeight="17.0" prefWidth="140.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="1.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="out_darkSteel" layoutX="145.0" layoutY="15.0" prefHeight="17.0" prefWidth="140.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="1.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="out_oldSilver" layoutY="63.0" prefHeight="17.0" prefWidth="140.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="1.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="out_glittering" layoutY="109.0" prefHeight="17.0" prefWidth="140.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="1.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Copper">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5276243093922651" focusDistance="-0.3448275862068966" radius="0.603448275862069">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006711409395973154">
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.7300000190734863" green="0.43763500452041626" blue="0.08030000329017639" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <Label layoutY="48.0" text="Old Silver">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5276243093922651" focusDistance="-0.3448275862068966" radius="0.603448275862069">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006711409395973154">
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.6899999976158142" green="0.22631999850273132" blue="0.02759999968111515" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <Label layoutX="145.0" text="Darksteel">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5276243093922651" focusDistance="-0.3448275862068966" radius="0.603448275862069">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006711409395973154">
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.6470588445663452" green="0.32549020648002625" blue="0.8588235378265381" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <Label layoutY="94.0" text="Glittering">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5276243093922651" focusDistance="-0.3448275862068966" radius="0.603448275862069">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006711409395973154">
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.5899400115013123" green="0.7799999713897705" blue="0.444599986076355" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <Label fx:id="lab_elixir2" layoutX="143.0" layoutY="48.0" text="Life Elixir">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5883977900552485" centerY="0.2085308056872038" focusDistance="-0.3448275862068966" radius="0.603448275862069">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006711409395973154">
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.8588235378265381" green="0.03529411926865578" blue="0.7960784435272217" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <Label fx:id="out_elixir" layoutX="145.0" layoutY="63.0" prefHeight="17.0" prefWidth="140.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="1.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="out_dragonSteel" layoutX="145.0" layoutY="109.0" prefHeight="17.0" prefWidth="140.0" style="-fx-background-color: #323844; -fx-background-radius: 2; -fx-border-radius: 2; -fx-border-width: 1; -fx-border-color: #535c7175;" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="1.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="lab_dragonSteel2" layoutX="142.0" layoutY="94.0" text="Dragonsteel">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.46132596685082866" centerY="0.13744075829383887" focusDistance="-0.3448275862068966" radius="0.603448275862069">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.46308724832214765">
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.7894737124443054" green="0.7894737124443054" blue="0.7894737124443054" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <Line endX="-22.0" fill="WHITE" layoutX="92.5" layoutY="35.0" startX="-22.0" startY="27.0" stroke="WHITE" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="62.0" layoutY="42.0" prefHeight="0.0" prefWidth="16.0" style="-fx-background-color: #272c34;" text=" OR " textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="8.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="9.0" layoutY="10.0" prefHeight="14.0" prefWidth="284.0" text="LEGENDS" textFill="#f8f8f8" underline="true">
+                     <font>
+                        <Font name="Calibri Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="footerPane" layoutY="585.0" prefHeight="15.0" prefWidth="600.0" style="-fx-background-color: #202225;">
+         <children>
+            <Label contentDisplay="TOP" prefHeight="15.0" prefWidth="86.0" text="Created by: Eoner" textFill="#cdcdcd">
+               <font>
+                  <Font name="Calibri Bold" size="11.0" />
+               </font>
+               <padding>
+                  <Insets left="4.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
